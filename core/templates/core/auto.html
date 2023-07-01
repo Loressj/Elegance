@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Autos</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+        tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+        th {
+            background-color: #0709a0;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="row">
+        <h1>Listado de Autos</h1>
+    </div>
+<div class="row">
+    <table border="1">
+        <tr><td>Modelo</td><td>Marca</td><td>Color</td><td>Precio</td></tr>
+        {% for au in autos %}
+        <tr><td>{{au.modelo}}</td><td>{{au.marca}}</td><td>{{au.precio}}</td></tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>

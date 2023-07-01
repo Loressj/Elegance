@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario de registro</title>
+  <link rel="stylesheet" href="{% static 'core/css/main.css' %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="gradient-custom">
+  <div class="container">
+    <div class="title" style="color: white;">Registro</div>
+    <div class="content">
+      <form id="registrationForm" action="#">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details" style="color: white;">Nombre Completo</span>
+            <input type="text" id="fullName" placeholder="Ingresa tu nombre" required>
+          </div>
+          <div class="input-box">
+            <span class="details" style="color: white;">Nombre de usuario</span>
+            <input type="text" id="username" placeholder="Ingresa tu nombre de usuario" required>
+          </div>
+          <div class="input-box">
+            <span class="details" style="color: white;">Email</span>
+            <input type="text" id="email" placeholder="Ingresa tu correo electrónico" required>
+          </div>
+          <div class="input-box">
+            <span class="details" style="color: white;">Número de Teléfono</span>
+            <input type="text" id="phone" placeholder="Ingresa tu número de teléfono" required>
+          </div>
+          <div class="input-box">
+            <span class="details" style="color: white;">Contraseña</span>
+            <input type="password" id="password" placeholder="Ingresa tu contraseña" required>
+          </div>
+          <div class="input-box">
+            <span class="details" style="color: white;">Confirma contraseña</span>
+            <input type="password" id="confirmPassword" placeholder="Confirma tu contraseña" required>
+          </div>
+        </div>
+        <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1">
+          <input type="radio" name="gender" id="dot-2">
+          <input type="radio" name="gender" id="dot-3">
+          <span class="gender-title" style="color: white;">Género</span>
+          <div class="category">
+            <label for="dot-1">
+              <span class="dot one"></span>
+              <span class="gender" style="color: white;">Masculino</span>
+            </label>
+            <label for="dot-2">
+              <span class="dot two"></span>
+              <span class="gender" style="color: white;">Femenino</span>
+            </label>
+            <label for="dot-3">
+              <span class="dot three"></span>
+              <span class="gender" style="color: white;">Prefiero no decirlo</span>
+            </label>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Registrarse">
+        </div>
+      </form>
+    </div>
+  </div>
+  <script>
+
+  // VALIDACION REGISTRO
+document
+  .getElementById("registrationForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    var password = document.getElementById("password").value;
+    var confirmPassword = document.getElementById("confirmPassword").value;
+
+    if (password === confirmPassword) {
+      alert("Su registro ha sido completado");
+      window.location.href = "{% url 'index' %}";
+    } else {
+      alert("Las contraseñas no coinciden");
+    }
+  });
+</script>
+  
+</body>
+</html>

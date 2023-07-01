@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Formulario de Contacto</title>
+  <link rel="stylesheet" href="{% static 'core/css/main.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<body>
+  <div class="content gradient-custom">
+    <h1 class="logo">Contacto <span class="text-primary">Elegance Motors</span></h1>
+    <div class="contact-wrapper animated bounceInUp">
+      <div class="contact-form">
+        <h3>Ingresa los siguientes datos</h3>
+        <form action="">
+          <p>
+            <label>Nombre Completo</label>
+            <input type="text" name="nombrecompleto">
+          </p>
+          <p>
+            <label>Correo electrónico</label>
+            <input type="email" name="correoelectronico">
+          </p>
+          <p>
+            <label>Celular</label>
+            <input type="tel" name="phone">
+          </p>
+          <p>
+            <label>País</label>
+            <input type="text" name="pais">
+          </p>
+          <p class="block">
+            <label>Mensaje</label>
+            <textarea name="mensaje" rows="3"></textarea>
+          </p>
+          <p class="block">
+            <button>
+              Enviar
+            </button>
+          </p>
+        </form>
+      </div>
+      <div class="contact-info">
+        <img src="{% static 'core/img/contacto.png' %}" alt="contacto">
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.querySelector('form');
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const fullName = document.querySelector('input[name="nombrecompleto"]');
+        const email = document.querySelector('input[name="correoelectronico"]');
+        const phoneNumber = document.querySelector('input[name="phone"]');
+        const country = document.querySelector('input[name="pais"]');
+        const message = document.querySelector('textarea[name="mensaje"]');
+
+        if (fullName.value.trim() === '' || email.value.trim() === '' || phoneNumber.value.trim() === '' || country.value.trim() === '' || message.value.trim() === '') {
+          alert('Por favor, completa todos los campos.');
+        } else {
+          alert('¡Formulario enviado correctamente. Pronto nos contactaremos contigo!');
+          form.reset();
+          window.location.href = "{% url 'index' %}";
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

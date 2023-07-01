@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Equipo</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="wrapper" style="color: white;">
+        <h2>Nuestro Equipo de trabajo</h2>
+        <hr>
+        <div class="members" style="color: white;">
+            <div class="team-mem">
+                <img src="{% static 'core/img/equipo1.jpg' %}">
+                <h4>Lorenzo Araya</h4>
+                <p>Desarrollador</p>
+            </div>
+            <div class="team-mem" style="color: white;">
+                <img src="{% static 'core/img/equipo2.jpg' %}">
+                <h4>Guillermo Morales</h4>
+                <p>Soporte TI</p>
+            </div>
+            <div class="team-mem" style="color: white;">
+                <img src="{% static 'core/img/equipo3.png' %}">
+                <h4>Matias Araya</h4>
+                <p>Gerente de Ventas</p>
+            </div>
+            <div class="team-mem" style="color: white;">
+                <img src="{% static 'core/img/equipo4.png' %}">
+                <h4>Raiza Fuenzalida</h4>
+                <p>Administradora de Empresas</p>
+            </div>
+        </div>
+    </div> 
+    <style>
+      /* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        background: linear-gradient(135deg, #000000, #007bff);
+}
+.wrapper{
+    background: #000000;
+    width: 580px;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.4);
+}
+h2{
+    text-align: center;
+}
+hr{
+    width: 100px;
+    margin: 10px auto;
+    
+}
+.members{
+    display: flex;
+}
+.team-mem{
+    margin: 8px;
+}
+img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 10px;
+}
+h4,p{
+    text-align: center;
+    font-size: 12px;
+    margin: 7px;
+}
+    </style>
+</body>
+</html>
